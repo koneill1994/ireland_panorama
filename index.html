@@ -1,6 +1,6 @@
-<a href="panorama.html" id="link" onload="getSelected()">link to test panorama</a>
+<a href="panorama.html" id="link">link to test panorama</a>
 
-<select id="select" onselect="getSelected()"></select>
+<select id="select"></select>
 
 
 <script>
@@ -28,6 +28,9 @@ function getSelected(){
     console.log("change image to ".concat(files[sel.selectedIndex]))
     link.href="panorama.html&image=".concat(files[sel.selectedIndex])
 }
+
+window.onload=getSelected()
+sel.onselect=getSelected()
 
 
 </script>

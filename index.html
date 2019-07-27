@@ -26,7 +26,7 @@ files.forEach(function(x){
 
 function getSelected(){
     console.log("change image to ".concat(files[sel.selectedIndex]))
-    link.href="panorama_param.html&image=".concat(files[sel.selectedIndex])
+    link.href="panorama_param.html?image=".concat(files[sel.selectedIndex])
 }
 
 window.onload=getSelected()

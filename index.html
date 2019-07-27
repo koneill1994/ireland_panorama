@@ -1,9 +1,11 @@
-<a href="panorama.html">link to test panorama</a>
+<a href="panorama.html" id="link" onload="getSelected()">link to test panorama</a>
 
-<select id="select"></select>
+<select id="select" onselect="getSelected()"></select>
 
 
 <script>
+
+
 
 var files = [
     "croagh_patrick_slope.jpg",
@@ -12,6 +14,7 @@ var files = [
 ]
 
 sel=document.getElementById("select");
+link=document.getElementById("link");
 
 files.forEach(function(x){
     var option = document.createElement("option");
@@ -19,5 +22,11 @@ files.forEach(function(x){
     sel.add(option)
 }
 )
+
+
+function getSelected(){
+    link.href="panorama.html&image=".concat(files[sel.selectedIndex])
+}
+
 
 </script>

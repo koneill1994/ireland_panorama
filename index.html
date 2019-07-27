@@ -20,7 +20,6 @@ a:hover {
 <script>
 
 
-
 var files = [
     "croagh_patrick_slope",
     "croagh_patrick_shoulder",
@@ -30,21 +29,25 @@ var files = [
 sel=document.getElementById("select");
 link=document.getElementById("link");
 
-files.forEach(function(x){
-    var option = document.createElement("option");
-    option.text=x;
-    sel.add(option)
-}
-)
-
-
 function getSelected(){
     console.log("change image to ".concat(files[sel.selectedIndex]))
     link.href="panorama_param.html?image=".concat(files[sel.selectedIndex])
 }
 
+
+files.forEach(function(x){
+        var option = document.createElement("option");
+        option.text=x;
+        sel.add(option)
+    }
+)
+
+sel.addEventListener("click",
+    function(){
+        getSelected()
+    }
+);
 window.onload=getSelected()
-sel.onclick=getSelected()
 
 
 </script>

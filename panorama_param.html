@@ -23,7 +23,7 @@ url=new URL(window.location.href)
 
 pannellum.viewer('panorama', {
     "type": "equirectangular",
-    "panorama": url.searchParams.get("image"),
+    "panorama": url.searchParams.get("image").concat(".jpg"),
     "autoLoad": true
 });
 </script>

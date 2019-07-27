@@ -1,1 +1,20 @@
 <a href="panorama.html">link to test panorama</a>
+
+<select id="select"></select>
+
+
+<script>
+
+var fs = require('fs');
+var files = fs.readdirSync('/assets/photos/');
+
+sel=document.getElementById("select");
+
+files.forEach(function(x){
+    var option = document.createElement("option");
+    option.text=x;
+    sel.add(option)
+}
+)
+
+</script>

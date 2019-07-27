@@ -1,4 +1,4 @@
-<a href="panorama.html" id="link">link to test panorama</a>
+<a href="panorama_param.html" id="link">link to test panorama</a>
 
 <select id="select"></select>
 
@@ -26,11 +26,11 @@ files.forEach(function(x){
 
 function getSelected(){
     console.log("change image to ".concat(files[sel.selectedIndex]))
-    link.href="panorama.html&image=".concat(files[sel.selectedIndex])
+    link.href="panorama_param.html&image=".concat(files[sel.selectedIndex])
 }
 
 window.onload=getSelected()
-sel.onselect=getSelected()
+sel.onclick=getSelected()
 
 
 </script>

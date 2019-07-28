@@ -1,7 +1,10 @@
-<select id="select"></select>
-<br>
-<a href="panorama_param.html" id="link">View panorama!</a>
+<div>
 
+    <select id="select"></select>
+    <br>
+    <a href="panorama_param.html" id="link">View panorama!</a>
+
+</div>
 
 <style>
 a {
@@ -19,23 +22,27 @@ a:hover {
 
 <script>
 
-
+// list of files to display in panorama viewer
+// for example, "test" will refer to test.jpg
 var files = [
     "croagh_patrick_slope",
     "croagh_patrick_shoulder",
     "inishboffin_road",
-    "the_price_house"
+    "the_price_house",
+    "sheep_by_the_sea"
 ]
 
 sel=document.getElementById("select");
 link=document.getElementById("link");
 
+//this changes what hyperlink the button goes to
+// run it when you change which image is selected
 function getSelected(){
     console.log("change image to ".concat(files[sel.selectedIndex]))
     link.href="panorama_param.html?image=".concat(files[sel.selectedIndex])
 }
 
-
+// add each file to the dropdown menu
 files.forEach(function(x){
         var option = document.createElement("option");
         option.text=x;
@@ -43,6 +50,7 @@ files.forEach(function(x){
     }
 )
 
+//event listeners to run getSelected
 sel.addEventListener("change",
     function(){
         getSelected()
